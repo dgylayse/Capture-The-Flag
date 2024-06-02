@@ -5,25 +5,25 @@ Yakın zamanda bir arkadaşımız sebebi bilinmeyen bir kaza geçirdi ve maalese
 
 *Flag Formatı: FlagKaza{‘………’_Caddesi}*
 
-![alt text](Images/image-0.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-0.png)
 
 **ÇÖZÜM:**
 
 [TinEye](https://tineye.com/) ile resimi arattım.
 
-![alt text](Images/image-1.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-1.png)
 
 Verilen site bağlantısında İzmirde bir yer olduğunu anladım.  
 
-![alt text](Images/image-2.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-2.png)
 
 Resimin daha büyük halinde vintage city yazdığı görülüyor.  Vintage city izmir diye arattım.
 
-![alt text](Images/image-3.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-3.png)
 
 Facebookta caddenin adını Süvari olduğunu görüyoruz.
 
-![alt text](Images/image-4.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-4.png)
 
 ***FlagKaza{‘Süvari’_Caddesi}***
 ***
@@ -41,19 +41,19 @@ Saldırgan tarafından bırakılan görüntüyü kopyaladık, tarayıcınızda [
 
 Soruda saldırganın bıraktığı resmin kopyası linkte verilmiştir. Linke basalım.
 
-![alt text](Images/image-9.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-9.png)
 
 Linke basınca aşağıdaki görüntüden başka bir şey yok. 
 
-![alt text](Images/image-10.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-10.png)
 
 Bu tür durumlarda ilk başvurmamız gereken şey sayfanın kaynak kodlarıdır. Faremiz ile sağa tıklayıp inceleye basalım. 
 
-![alt text](Images/image-11.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-11.png)
 
 Ve burada saldırganın kullanıcı adını bulmuş bulunmaktayız. 
 
-![alt text](Images/image-12.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-12.png)
 
 ***THM{SakuraSnowAngelAiko}***
 
@@ -69,27 +69,27 @@ Saygın bir arama motorunda yapılacak hızlı bir arama, diğer platformlardaki
 
 Bilgilendirme kısmında da bahsettiği gibi bir kullanıcı adı ile birçok bilgiye ulaşabiliriz. Bulduğumuz kullanıcı adı ile googlede aratalım. 
 
-![alt text](Images/image-13.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-13.png)
 
 İlk önce bir GitHuba girelim. Sayfayı ilk açtığımda gözüme ilk ilişen PGP Keys oldu. Buna bir bakalım. 
 
-![alt text](Images/image-14.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-14.png)
 
 Buradan View code kısmına bakalım. Buradan da publickey denen kısma basalım.  
 
-![alt text](Images/image-15.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-15.png)
 
 Burada bize uzunca bir hash verdiğini görüyoruz.
 
-![alt text](Images/image-16.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-16.png)
 
 Hashın ilk satırında (----BEGIN PGP PUBLİC KEY BLOCK-----) da  anlaşılacağı üzere bu hash PGP algoritmasınındır. Şimdi bu hashı çözelim bakalım bize ne tür bilgiler verecek. Googleye pgp decoder yazıp ilk siteye girin. Hashın kodunu çözün. 
 
-![alt text](Images/image-17.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-17.png)
 
 Ve işte saldırganın mail hesabı:
 
-![alt text](Images/image-18.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-18.png)
 
 ***THM{SakuraSnowAngel83@protonmail.com}***
 
@@ -99,7 +99,7 @@ Ve işte saldırganın mail hesabı:
 
 Saldırganın kullanıcı adını tekrar googleden aradığımızda bir linkedin hesabının olduğu anlaşılıyor.
 
-![alt text](Images/image-19.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-19.png)
 
 ***THM{Aiko Abe}***
 
@@ -115,31 +115,31 @@ Bize böyle bir bilgi verilmiştir. Bu da oluyor ki saldırgan onu takip ettiği
 
 Tekrardan saldırganın github hesabına girelim. Buradan github deposuna girip detaylıca bir inceleyelim. 
 
-![alt text](Images/image-20.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-20.png)
 
 Buradan ETH deposuna girelim. *(ETH, ERC-20 kod sistemi sayesinde birçok kripto para biriminin altyapısını oluşturan merkeziyetsiz ve açık kaynak kodlu bir blok zinciridir.)*
 
-![alt text](Images/image-21.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-21.png)
 
 Burada bir script vermiş onu açalım.
 
-![alt text](Images/image-22.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-22.png)
 
 Sağ üstte 23.01.2021 yılı için bir geçmiş gösteriyor oraya bakalım.
 
-![alt text](Images/image-23.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-23.png)
 
 Üsttekine bakalım. 
 
-![alt text](Images/image-24.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-24.png)
 
 Burada kırmızı renkle gösterilen kısım silinmiş alan.  Sarı renk ile vurguladığım kısmı googleden aratalım. 
 
-![alt text](Images/image-25.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-25.png)
 
 Arattığımızda hemen ikinci sitede kripto para birimi ismi gözükmektedir.
 
-![alt text](Images/image-27.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-27.png)
 
 ***THM{Ethereum}***
 
@@ -155,7 +155,7 @@ Arattığımızda hemen ikinci sitede kripto para birimi ismi gözükmektedir.
 
 **ÇÖZÜM**
 
-![alt text](Images/image-28.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-28.png)
 
 ***THM{Ethermine}***
 
@@ -165,15 +165,15 @@ Arattığımızda hemen ikinci sitede kripto para birimi ismi gözükmektedir.
 
 Saldırganın kripto para cüzdan adresini googleden arattığımıza ikinci siteyi açalım. Siteyi açtığımızda karşımıza bir arama çubuğu var .
 
-![alt text](Images/image-29.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-29.png)
 
 Buraya **“0xa102397dbeeBeFD8cD2F73A89122fCdB53abB6ef"** yapıştıralım. Karşımıza çıkan sayfada işaretlediğim kısıma basalım. 
 
-![alt text](Images/image-30.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-30.png)
 
 Sayfa bize hesap hareketlerini gösteriyor. Biraz sayfayı inceleyelim. İncelediğimizde burada faklı bir kripto para birimini görmekteyiz. 
 
-![alt text](Images/image-31.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-31.png)
 
 ***THM{Tether}***
 
@@ -189,11 +189,11 @@ Birçok kullanıcı kullanıcı adını farklı platformlarda paylaşsa da, kull
 
 Saldırgan tarafından bize gönderilen mesaja bakalım. 
 
-![alt text](Images/image-32.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-32.png)
 
 Saldırganın mesajı: "Ne yaptığını görmediğimi sanma! Beni yakalamayacaksın BTW. Ben zaten gidiyorum . Evine dön, baaaayyyyy! " 
 
-![alt text](Images/image-33.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-33.png)
 
 Resimdeki kullanıcı adını twitterda aratalım.  Karşımıza böyle bir tweet çıkıyor. Tweeti atan kullanıcının sayfasına gidelim. 
 
@@ -201,7 +201,7 @@ Resimdeki kullanıcı adını twitterda aratalım.  Karşımıza böyle bir twee
 
 Ve karşımızda  şuanki Twitter tanıtıcısı :
 
-![alt text](Images/image-35.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-35.png)
 
 ***THM{SakuraLoverAiko}***
 
@@ -211,23 +211,23 @@ Ve karşımızda  şuanki Twitter tanıtıcısı :
 
 Saldırganın tweetlerini incelediğimizde şöyle bir tweet karşımıza çıkıyor:
 
-![alt text](Images/image-36.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-36.png)
 
 Tweet : **"Artık yeni telefonlar aldığımda Ap’lerimi unutmak yok!”*  Saldırgan bu tweetin altına bir tweet daha atmış. Ve burada DEEP PASTE büyük yazmış.
 
-![alt text](Images/image-37.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-37.png)
 
 Bu da demek oluyor ki deep webden DeepPaste sitesine gidip tweette verilen hashı orada aratmak. 
 
-![alt text](Images/image-38.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-38.png)
 
 Ben bayağı duckduckgo üzerinden bu siteyi aradım bulamadım. Zaten ipucunda deep webe girmek istemeyenler için link vermiş. Biz oradan yararlanalım. 
 
-![alt text](Images/image-39.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-39.png)
 
 Verilen linke girelim. 
 
-![alt text](Images/image-40.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-40.png)
 
 Soru bizden url istiyor.  Üstteki arama çubuğunun yanındaki kutuya da hashı yazacağız ve işteee cevap. 
 
@@ -239,15 +239,15 @@ Soru bizden url istiyor.  Üstteki arama çubuğunun yanındaki kutuya da hashı
 
 Bu soruyu çözmek için wigle.net sitesinden yararlanacağız. Ve aynı zamanda bu soruyu çözebilmeniz için  hesap açmanız gerek. 
 
-![alt text](Images/image-41.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-41.png)
 
 Görselde işaretlediğim yere girelim. SSID / Network Name (exact match) yazan kutucuğa “DK1F-G” yazalım.
 
-![alt text](Images/image-42.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-42.png)
 
 Ve işte cevap. 
 
-![alt text](Images/image-43.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-43.png)
 
 ***THM{84:af:ec:34:fc:f8}***
 
@@ -261,11 +261,11 @@ OSINT'te, çoğu zaman net ve kesin bir cevaba işaret eden "dumanı tüten bir 
 
 Saldırganın tweetlerinden birinde uçağa binmeden önce paylaştığı fotoğraf var. 
 
-![alt text](Images/image-44.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-44.png)
 
 Tweette Bethesda’da olduğunu söylüyor. Hemen googleden “Bethesda airport” diye aratalım.
 
-![alt text](Images/image-45.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-45.png)
 
 ***THM{DCA}***
 
@@ -275,11 +275,11 @@ Tweette Bethesda’da olduğunu söylüyor. Hemen googleden “Bethesda airport�
 
 Saldırganın tweetlerinden birinde bir otel var. 
 
-![alt text](Images/image-46.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-46.png)
 
 Otelin üzerinde yazan yazıyı hemen googlede aratalım.  
 
-![alt text](Images/image-47.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-47.png)
 
 Burada Haneda bilgisine ulaşıyoruz. 
 
@@ -291,23 +291,23 @@ Burada Haneda bilgisine ulaşıyoruz.
 
 Tweetindeki haritadan yararlanacağız. 
 
-![alt text](Images/image-48.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-48.png)
 
 Bu görseli web'de arayalım. 
 
-![alt text](Images/image-49.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-49.png)
 
 Karşımıza böyle bir sayfa gelecek. 
 
-![alt text](Images/image-50.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-50.png)
 
 Buradan haritalara girelim. Haritalar kısmında katmanlar kısmından uydu görünüm yapalım çünkü sorudaki görsel de uydu görünümdedir bulmamız daha kolaylaşır. 
 
-![alt text](Images/image-51.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-51.png)
 
 Biraz inceleyerek görselde verilen kısmı bulabiliriz.  
 
-![alt text](Images/image-52.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-52.png)
 
 ***THM{Lake Inawashiro}***
 
@@ -317,19 +317,19 @@ Biraz inceleyerek görselde verilen kısmı bulabiliriz.
 
 Tekrar wigle.net sitesine gidelim.  
 
-![alt text](Images/image-53.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-53.png)
 
 Sonra :
 
-![alt text](Images/image-54.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-54.png)
 
 Önceki görevde bulduğumuz BSSID buraya yazalım. 
 
-![alt text](Images/image-55.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-55.png)
 
 Veee sorumuzun cevabı burada.
 
-![alt text](Images/image-56.png)
+![alt text](https://github.com/dgylayse/Capture-The-Flag/blob/main/Images/image-56.png)
 
 ***THM{Hirosaki}***
 ***
